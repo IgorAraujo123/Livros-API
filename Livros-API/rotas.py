@@ -28,12 +28,3 @@ class API:
         url_final = url_api(dict_params)
         
         return r.get(url_final).json().get("items")
-
-    def doc(self):
-        with open("D:/Projetos python/Agente IA Livros/Livros_site/backend/doc.json", "r") as dados_json:
-            doc_file = js.load(dados_json)
-        return doc_file
-
-
-
-
