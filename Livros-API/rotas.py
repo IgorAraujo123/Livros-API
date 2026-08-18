@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 class API:
 
     def __init__(self):
-        self.key = "AIzaSyCugkTxksVat-eQawRKcpO6CHWqY-yYeyc"
+        self.key = "Chave api"
 
     def get_requisicao(self, url_base, dict_params):
         q = dict_params.pop("q", "")
