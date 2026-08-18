@@ -1,0 +1,66 @@
+{
+  "parametros": {
+    "q": "pesquisa volumes que contêm essa string de texto",
+    "terms": {
+      "palavras-chave especiais que podem ser especificadas nos termos de pesquisa para pesquisar em campos especificos, como:": {
+        "intitle": "Retorna resultados em que o texto apos essa palavra-chave e encontrado no titulo",
+        "inauthor": "Retorna resultados em que o texto apos essa palavra-chave e encontrado no autor",
+        "inpublisher": "Retorna resultados em que o texto apos essa palavra-chave e encontrado no editor",
+        "subject": "Retorna resultados em que o texto apos essa palavra-chave esta listado na lista de categorias do volume",
+        "isbn": "Retorna resultados em que o texto apos essa palavra-chave e o numero ISBN",
+        "lccn": "Retorna resultados em que o texto apos essa palavra-chave e o numero de controle da Biblioteca do Congresso",
+        "oclc": "Retorna resultados em que o texto apos essa palavra-chave e o numero da Online Computer Library Center"
+      }
+    },
+    "filter": {
+      "e possivel usar o parametro filter para restringir ainda mais os resultados retornados definindo-o como um dos seguintes valores:": {
+        "partial": "retorna resultados em que pelo menos partes do texto podem ser visualizados",
+        "full": "retorna apenas resultados em que todo o texto e visivel",
+        "free-ebooks": "retorna apenas resultados que sao Google eBooks sem custo financeiro",
+        "paid-ebooks": "retorna apenas resultados que sao Google e-books com um preco",
+        "ebooks": "retorna apenas resultados que sao Google eBooks, pagos ou sem custo financeiro. Exemplos de conteudo que nao sao e-books sao conteudo de editores disponivel em visualizacao limitada e nao para venda, ou revistas"
+      }
+    },
+    "printType": {
+      "e possivel usar o parametro printType para restringir os resultados retornados a um tipo especifico de impressao ou publicacao, definindo-o como um dos seguintes valores:": {
+        "all": "nao restringe por tipo de impressao (padrao)",
+        "books": "retorna apenas resultados que sao livros",
+        "magazines": "retorna resultados que sao revistas"
+      }
+    },
+    "projection": {
+      "e possivel usar o parametro projection com um dos seguintes valores para especificar um conjunto predefinido de campos de volume a serem retornados:": {
+        "full": "retorna todos os campos de volume",
+        "lite": "retorna apenas determinados campos. Consulte as descrições de campo marcadas com dois asteriscos na Referencia do volume para saber quais campos estão incluidos"
+      }
+    },
+    "orderBy": {
+      "Por padrao, uma solicitacao de pesquisa de volumes retorna resultados maxResults, em que maxResults e o parametro usado na paginacao (acima), ordenado por relevancia aos termos de pesquisa. e possivel mudar a ordem definindo o parametro orderBy como um destes valores:": {
+        "relevance": "retorna resultados na ordem da relevancia dos termos de pesquisa (padrao)",
+        "newest": "retorna resultados em ordem da mais recente para a menos recente"
+      }
+    }
+  },
+  "Exemplos cenarios": {
+    "Buscar livro por titulo": "/volumes?q=python",
+    "Buscar livro por autor": "/volumes?q=inauthor:George Orwell",
+    "Buscar por ISBN": "/volumes?q=isbn:9780134685991",
+    "Buscar por editora": "/volumes?q=inpublisher:O'Reilly",
+    "Buscar por assunto": "/volumes?q=subject:Data Science",
+    "Buscar por titulo exato": "/volumes?q=intitle:Clean Code",
+    "Buscar por titulo + autor": "/volumes?q=intitle:Python&terms=inauthor&value_term=Mark Lutz",
+    "Buscar livro inexistente": "/volumes?q=abcdefghijk123456789",
+    "Buscar utilizando UTF-8": "/volumes?q=programação",
+    "Buscar com caracteres especiais": "/volumes?q=C%23",
+    "Buscar com paginacao": "/volumes?q=python&startIndex=20",
+    "Buscar limitando quantidade": "/volumes?q=python&maxResults=5",
+    "Buscar ebooks gratuitos": "/volumes?q=python&filter=free-ebooks",
+    "Buscar ebooks pagos": "/volumes?q=python&filter=paid-ebooks",
+    "Buscar livros completos": "/volumes?q=python&filter=full",
+    "Buscar ordenado por relevancia": "/volumes?q=python&orderBy=relevance",
+    "Buscar ordenado por novidade": "/volumes?q=python&orderBy=newest",
+    "Buscar por idioma": "/volumes?q=python&langRestrict=pt",
+    "Buscar por pais": "/volumes?q=python&country=BR",
+    "Buscar utilizando printType": "/volumes?q=python&printType=books"
+  }
+}
